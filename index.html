@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulando el DOM</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Bootstrap JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script defer src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <main class="container">
+    <h1 id="titulo" class="display-1">El título</h1>
+    <section id="seccion-parrafos">
+
+      <!-- p.descripcion*7{Lorem $} atajo para escribir rápido-->
+      <p class="descripcion text-primary">Este es un párrafo</p>
+      <p class="descripcion text-muted">Lorem 1</p>
+      <p class="descripcion text-muted">Lorem 2</p>
+      <p class="descripcion text-muted">Lorem 3</p>
+      <p class="descripcion text-muted">Lorem 4</p>
+      <p class="descripcion text-muted">Lorem 5</p>
+      <p class="descripcion text-muted">Lorem 6</p>
+      <p class="descripcion text-muted">Lorem 7</p>
+    </section>
+
+    <section>
+      <ul>
+        <li>Elemento de lista 1</li>
+        <li>Elemento de lista 2</li>
+        <li>Elemento de lista 3</li>
+        <li>Elemento de lista 4</li>
+        <li>Elemento de lista 5</li>
+      </ul>
+    </section>
+
+    <div id="resultado"></div>
+
+    <section id="modificar-atributos">
+      <a href="https://www.google.com/">Google</a>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/330px-Google_2015_logo.svg.png"
+        alt="Google-logo" width="100px">
+        <p>Esto es otro párrafo</p>
+    </section>
+
+    <section id="contenedor"></section>
+  </main>
+</body>
+
+</html>

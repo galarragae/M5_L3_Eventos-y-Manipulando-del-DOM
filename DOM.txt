@@ -1,0 +1,14 @@
+---------- Jerarquía del DOM (Document Objet Model) ----------
+
+Sigue una jerarquía en forma de árbol:
+
+- Nodo raíz: document. El punto de inicio del DOM. No es una etiqueta en sí.
+- Nodo de elementos: <body>, <h1>, <p>, etc. Representan etiquetas HTML.
+- Nodo de texto: Contienen el contenido de texto dentro de un elemento HTML.
+- Nodo de atributos: class, id, src, href, etc. Representan los atributos de un elemento.
+
+---------- Relación entre nodos ----------
+
+- Parent node: Puede tener otros nodos dentro de sí.
+- Child nodes: Son elementos dentro de un nodo padre.
+- Sibling nodes: Elementos que comparten el mismo padre.

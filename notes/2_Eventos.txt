@@ -1,0 +1,79 @@
+================================================================
+                Tipos de eventos en JS
+================================================================
+
+Clasificación de eventos más comunes:
+● Eventos del Mouse: click, dblclick, mouseover, mouseout, mousemove
+● Eventos del Teclado: keydown, keyup, keypress
+● Eventos de Formulario: submit, change, focus, blur, input
+● Eventos de la Ventana: load, resize, scroll, unload
+● Eventos de Dispositivos Móviles: touchstart, touchmove, touchend
+● Eventos del DOM: DOMContentLoaded, DOMNodeInserted, DOMNodeRemoved
+
+Estos eventos permiten mejorar la experiencia del usuario en la web al reaccionar a
+diferentes interacciones.
+
+================================================================
+                    Modelo de eventos en JS
+================================================================
+
+El modelo de eventos sigue dos enfoques principales:
+
+1. Event Bubbling (Burbujeo de eventos):
+○ El evento se propaga desde el elemento objetivo hacia sus elementos padres.
+  Ejemplo: Si hacemos clic en un botón dentro de un div, el evento se propaga desde el
+botón hasta el div.
+
+2. Event Capturing (Captura de eventos):
+○ El evento se propaga desde el elemento raíz del DOM hasta el elemento objetivo.
+
+Hay que especificar en qué fase queremos "atrapar" el evento. Si no especificamos nada, 
+el addEventListener lo tomará como bubbling (lo más común).
+
+================================================================
+                    Manejo de eventos en JS
+================================================================
+
+● Atributos HTML (No recomendado):
+  Simple, pero difícil de mantener en código complejo.
+
+    <button onclick="alert('Hola)"> Haz click </button>
+________________________________________________________________
+● Propiedades del DOM:
+  Más estructurado, pero sólo permite un manejador por evento.
+
+    const btn = document.getElementById("miBoton);
+    btn.onclick = function () {
+      alert("Botón clickeado");
+    }
+
+________________________________________________________________
+● Event Listener (Recomendado)
+  ✅ Permite múltiples funciones para un mismo evento y mejor control.
+
+    const btn = document.getElementById("miBoton);
+    btn.addEventListener("click", function(){
+      alert("Botón clickeado);
+    });
+
+
+================================================================
+                 Delegación de eventos
+================================================================
+
+
+Es una técnica eficiente donde un solo event listener en un elemento padre maneja los eventos de sus hijos, en
+lugar de asignar eventos a cada uno individualmente.
+
+¿Por qué usarla?
+✔ Reduce el uso de memoria y mejora el rendimiento.
+✔ Facilita la manipulación de elementos dinámicos agregados al DOM.
+
+En este caso, no es necesario agregar un click a cada LI, ya que el evento se maneja desde el UL:
+
+    document.getElementById("lista").addEventListener("click", function(event) {
+      if (event.target.tagName === "LI") {
+        alert ("Click en " + event.target.textContent);
+      }
+    });
+

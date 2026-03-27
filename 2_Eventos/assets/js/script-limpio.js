@@ -6,21 +6,13 @@ const botonAgregar = document.getElementById("botonAgregar");
 
 // 2. Función para agregar nueva tarea a la lista desde el input
 const crearTarea = (event) => {
-  // Verificar si el imput tiene contenido para agregarlo a la lista
   if (tareaInput.value.trim() !== "") {
-    // Crear un nuevo elemento <li>
     const nuevaTarea = document.createElement("li");
-    // Asignarle el texto que fue capturado en el input del form
     nuevaTarea.textContent = tareaInput.value;
     nuevaTarea.classList.add("list-group-item");
 
-    // Agregar elemento al DOM (dentro de la <ul> #listaTareas)
     listaTareas.appendChild(nuevaTarea);
 
-    // Limpiar input para escribir la siguiente tarea
-    // tareaInput.value = "";  // e
-    // Esto sería dejar los campos vacíos
-    // Al agregar el event en crearTarea, podemos comenzar a crear un evento para hacer un reset y es una forma más limpia de hacerlo
     event.target.reset();
   } else {
     alert("Debes agregar una tarea válida.");
@@ -28,16 +20,12 @@ const crearTarea = (event) => {
 };
 
 // ----- Opción 1: Funcionalidad para agregar tarea: evento "click" en el botón, sin form -----
-// El botón debe ser type = "button"
 // botonAgregar.addEventListener("click", () => {
 //   crearTarea();
 // });
 
-// // Al hacer click en Enter en el input, también se agrega una tarea
 // tareaInput.addEventListener("keypress", (event) => {
 //   if (event.key === "Enter") {
-//     // Aunque el botón sea type="button", la tecla Enter aún hace que se intente enviar el formulario
-//     // Se usa preventDefault dentro del if para que sólo pase con la tecla Enter y poder seguir escribiendo en el input
 //     event.preventDefault();
 //     crearTarea();
 //   }
@@ -47,17 +35,13 @@ const crearTarea = (event) => {
 // El botón debe ser type = "submit"
 formTarea.addEventListener("submit", (event) => {
   event.preventDefault();
-  crearTarea(event); // se agregó el event en crearTarea ⬆️ al crearla para hacer el reset limpio del form
+  crearTarea(event);
 });
 
 // Eliminar tarea al hacer click en el <li>
-// Delegación de eventos
 listaTareas.addEventListener("click", (event) => {
-  // Sólo escucharemos el click en el elemento <li>
-  console.log(event);
-  // al hacer click en la tarea en consola => bubbles: true // target => tagName: LI
+  // console.log(event);
   if (event.target.tagName === "LI") {
-    // si se hace click y es tiene tagName LI, lo elimina
     event.target.remove();
   }
 });
